@@ -93,7 +93,7 @@ foreach ($teamStatsSorted as $stats) {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>Baseball Dashboard</title>
 </head>
 
 <body>
@@ -105,8 +105,8 @@ foreach ($teamStatsSorted as $stats) {
       <div><a href="index.php">データ入力・結果一覧画面に戻る</a></div>
       <div class="moritaka_img"><img src="img/moritaka_anime00.png" alt="森高アイコン"></div>
     </div>
-
   </header>
+
   <main class="wrapper">
     <div class="dash_wrapper">
       <div class="upper_side">
@@ -169,6 +169,9 @@ foreach ($teamStatsSorted as $stats) {
     </div>
   </main>
 
+  <footer class="dash_footer">
+
+  </footer>
   <script>
     // Chart.jsでチャート化するために、データをJSON化
     const teamLabels = <?= json_encode(array_column($teamStatsSorted, "team")) ?>;

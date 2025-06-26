@@ -5,7 +5,21 @@
 }
 
 body {
-  height: 100vh;
+  /* height: 100vh; */
+}
+
+.form_fixed {
+  height: 426px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+}
+
+h1 {
+  text-shadow: 2px 2px 4px lightcyan;
 }
 
 .dash_header {
@@ -30,23 +44,16 @@ body {
 
 .moritaka_img img {
   width: 100%;
-  /* height: auto; */
   object-fit: cover;
   border-radius: 50%;
   opacity: 0.3;
-  /* display: block; */
 
 }
-/* .dash_header img {
-  width: 100px;
-  height: 100px;
-} */
 
 .wrapper {
   max-width: 1280px;
   width: calc(100% - 40px);
   margin: 0 auto;
-  height: 80%;
 }
 
 .dash_wrapper {
@@ -157,6 +164,15 @@ button {
 
 
 /* 試合結果一覧 */
+.main_scroll {
+  position: absolute;
+  top: 426px;
+  left: 0;
+  width: 100%;
+
+}
+
+
 .result_wrapper {
   max-width: 800px;
   width: 100%;
@@ -197,4 +213,16 @@ button {
 .ranking th,
 .result_list th {
   background: #eee;
+}
+
+footer {
+  background: lightblue;
+  height: 60px;
+  margin-top: 20px;
+}
+
+.dash_footer {
+  background: lightblue;
+  height: 30px;
+  margin-top: 20px;
 }
