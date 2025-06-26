@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>Baseball Dashboard</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
     const teams = ["ソフトバンク", "日本ハム", "ロッテ", "楽天", "オリックス", "西武"];
@@ -34,70 +34,73 @@
 </head>
 
 <body>
-  <header class="dash_header">
-    <div>
-      <h1>プロ野球チーム成績ダッシュボード</h1>
-    </div>
-    <div class="header_right">
-      <div><a href="read.php">成績ダッシュボードへ</a></div>
-      <div class="moritaka_img"><img src="img/moritaka_anime00.png" alt="森高アイコン"></div>
-    </div>
-  </header>
-
-  <form action="create.php" method="POST">
-    <fieldset>
-      <legend>試合結果の入力画面</legend>
-      <div class="input_date">
-        <label for="date">日付</label>
-        <input type="date" name="date" id="date" required>
+  <div class="form_fixed">
+    <header class="dash_header">
+      <div>
+        <h1>プロ野球チーム成績ダッシュボード</h1>
       </div>
-      <div class="team_box">
-        <div class="input_team">
-          <label for="team">チーム</label>
-          <select name="team" id="team" required>
-            <option value="">選択してください</option>
-            <option value="ソフトバンク">ソフトバンク</option>
-            <option value="日本ハム">日本ハム</option>
-            <option value="ロッテ">ロッテ</option>
-            <option value="楽天">楽天</option>
-            <option value="オリックス">オリックス</option>
-            <option value="西武">西武</option>
-          </select>
-        </div>
-        <div class="input_opponent">
-          <label for="opponent">相手チーム</label>
-          <select name="opponent" id="opponent" required></select>
-        </div>
+      <div class="header_right">
+        <div><a href="read.php">成績ダッシュボードへ</a></div>
+        <div class="moritaka_img"><img src="img/moritaka_anime00.png" alt="森高アイコン"></div>
       </div>
+    </header>
 
-      <div class="result_box">
-        <div class="input_result">
-          <label for="result">勝敗</label>
-          <select name="result" id="result" required>
-            <option value="">--選択--</option>
-            <option value="勝ち">勝ち</option>
-            <option value="負け">負け</option>
-            <option value="引き分け">引き分け</option>
-          </select>
+    <form action="create.php" method="POST">
+      <fieldset>
+        <legend>試合結果の入力画面</legend>
+        <div class="input_date">
+          <label for="date">日付</label>
+          <input type="date" name="date" id="date" required>
         </div>
-        <div class="input_score">
-          <label for="score">得点</label>
-          <input type="number" name="score" id="score">
+        <div class="team_box">
+          <div class="input_team">
+            <label for="team">チーム</label>
+            <select name="team" id="team" required>
+              <option value="">選択してください</option>
+              <option value="ソフトバンク">ソフトバンク</option>
+              <option value="日本ハム">日本ハム</option>
+              <option value="ロッテ">ロッテ</option>
+              <option value="楽天">楽天</option>
+              <option value="オリックス">オリックス</option>
+              <option value="西武">西武</option>
+            </select>
+          </div>
+          <div class="input_opponent">
+            <label for="opponent">相手チーム</label>
+            <select name="opponent" id="opponent" required></select>
+          </div>
         </div>
-        <div class="input_lost">
-          <label for="lost">失点</label>
-          <input type="number" name="lost" id="lost">
+
+        <div class="result_box">
+          <div class="input_result">
+            <label for="result">勝敗</label>
+            <select name="result" id="result" required>
+              <option value="">--選択--</option>
+              <option value="勝ち">勝ち</option>
+              <option value="負け">負け</option>
+              <option value="引き分け">引き分け</option>
+            </select>
+          </div>
+          <div class="input_score">
+            <label for="score">得点</label>
+            <input type="number" name="score" id="score">
+          </div>
+          <div class="input_lost">
+            <label for="lost">失点</label>
+            <input type="number" name="lost" id="lost">
+          </div>
         </div>
-      </div>
 
-      <div class="submit_btn">
-        <button type="submit">入力</button>
-      </div>
-    </fieldset>
+        <div class="submit_btn">
+          <button type="submit">入力</button>
+        </div>
+      </fieldset>
 
-  </form>
+    </form>
 
-  <hr>
+    <hr>
+  </div>
+
 
   <?PHP
 
@@ -120,25 +123,30 @@
   fclose($file);
   ?>
 
-  <div class="result_wrapper">
-    <h2>試合結果一覧</h2>
-    <table class="result_list">
-      <thead>
-        <tr>
-          <th>日付</th>
-          <th>チーム</th>
-          <th>相手</th>
-          <th>勝敗</th>
-          <th>得点</th>
-          <th>失点</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php foreach ($gameArray as $row) {
-          echo $row;
-        } ?>
-      </tbody>
-    </table>
+  <div class="main_scroll">
+    <div class="result_wrapper">
+      <h2>試合結果一覧</h2>
+      <table class="result_list">
+        <thead>
+          <tr>
+            <th>日付</th>
+            <th>チーム</th>
+            <th>相手</th>
+            <th>勝敗</th>
+            <th>得点</th>
+            <th>失点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($gameArray as $row) {
+            echo $row;
+          } ?>
+        </tbody>
+      </table>
+    </div>
+    <footer>
+
+    </footer>
   </div>
 
 </body>
