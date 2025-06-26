@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.dash_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lightblue;
+  padding: 10px 30px;
+  height: 90px;
+
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.moritaka_img {
+  width: 60px;
+}
+
+.moritaka_img img {
+  width: 100%;
+  /* height: auto; */
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0.3;
+  /* display: block; */
+
+}
+/* .dash_header img {
+  width: 100px;
+  height: 100px;
+} */
+
+.wrapper {
+  max-width: 1280px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  height: 80%;
+}
+
+.dash_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 20px;
+
+}
+
+.upper_side,
+.lower_side {
+  display: flex;
+  gap: 80px;
+  flex: 1;
+}
+
+.upper_side h2 {
+  border-left: 12px solid lightblue;
+  padding-left: 16px;
+}
+
+.lower_side h2 {
+  margin-bottom: 20px;
+  border-left: 12px solid lightblue;
+  padding-left: 16px;
+}
+
+/* 円グラフのratioをfalseにしているためマストで設定 */
+.upper_side_right {
+  width: 500px;
+  height: 400px;
+}
+
+
+hr {
+  border: none;
+  border-top: 8px solid #999;
+  margin: 30px 0;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 800px;
+  width: 100%;
+  padding: 30px 40px;
+  margin: 40px auto;
+  /* height: 328px; */
+  /* position: sticky; */
+}
+
+legend {
+  font-size: 1.5em;
+  border-left: 16px solid lightblue;
+  border-right: 16px solid lightblue;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+label {
+  border-left: 8px solid lightblue;
+  padding-left: 8px;
+}
+
+.team_box,
+.result_box {
+  display: flex;
+  gap: 30px;
+}
+
+#date {
+  width: 120px;
+  height: 30px;
+}
+
+#team,
+#opponent {
+  width: 120px;
+  height: 30px;
+
+}
+
+#result {
+  width: 100px;
+  text-align: center;
+  height: 30px;
+
+}
+
+#score,
+#lost {
+  width: 50px;
+  height: 30px;
+
+}
+
+.submit_btn {
+  display: flex;
+  justify-content: end;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+}
+
+
+/* 試合結果一覧 */
+.result_wrapper {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  /* background: lightcyan; */
+}
+
+.result_wrapper h2 {
+  border-left: 16px solid lightblue;
+  padding-left: 16px;
+}
+
+.result_list {
+  border-collapse: collapse;
+  max-width: 800px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* 順位表 */
+.ranking {
+  border-collapse: collapse;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 40px;
+  /* margin: 20px auto; */
+}
+
+.ranking th,
+.ranking td,
+.result_list th,
+.result_list td {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: center;
+}
+
+.ranking th,
+.result_list th {
+  background: #eee;
+}
